@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro https://www.liquibase.org/xml/ns/pro/liquibase-pro-4.3.xsd">
+
+    <!-- Версионирование базы данных для UserService -->
+
+    <changeSet id="userService_001_create_users_table" author="taranenko">
+        <createTable tableName="event">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(45)"/>
+            <column name="description" type="VARCHAR(128)"/>
+            <column name="classifier" type="VARCHAR(45)"/>
+            <column name="date" type="datetime"/>
+
+        </createTable>
+
+        <insert tableName="event">
+            <column name="id">1</column>
+            <column name="name">event 1</column>
+            <column name="description">description1</column>
+            <column name="classifier">CLASSIFIER1</column>
+            <column name="date">2023-02-15</column>
+        </insert>
+        <insert tableName="event">
+            <column name="id">2</column>
+            <column name="name">event 2</column>
+            <column name="description">description2</column>
+            <column name="classifier">CLASSIFIER2</column>
+            <column name="date">2023-02-02</column>
+        </insert>
+
+        <insert tableName="event">
+            <column name="id">3</column>
+            <column name="name">event 3</column>
+            <column name="description">description3</column>
+            <column name="classifier">CLASSIFIER3</column>
+            <column name="date">2023-02-13</column>
+        </insert>
+
+        <insert tableName="event">
+            <column name="id">4</column>
+            <column name="name">event 4</column>
+            <column name="description">description4</column>
+            <column name="classifier">CLASSIFIER1</column>
+            <column name="date">2023-02-15</column>
+        </insert>
+
+        <insert tableName="event">
+            <column name="id">5</column>
+            <column name="name">event 5</column>
+            <column name="description">description5</column>
+            <column name="classifier">CLASSIFIER2</column>
+            <column name="date">2023-02-15</column>
+        </insert>
+
+        <insert tableName="event">
+            <column name="id">6</column>
+            <column name="name">event 6</column>
+            <column name="description">description6</column>
+            <column name="classifier">CLASSIFIER3</column>
+            <column name="date">2023-02-02</column>
+        </insert>
+
+        <insert tableName="event">
+            <column name="id">7</column>
+            <column name="name">event 7</column>
+            <column name="description">description7</column>
+            <column name="classifier">CLASSIFIER1</column>
+            <column name="date">2023-02-15</column>
+        </insert>
+
+<!--        <rollback>-->
+        <!--            <dropTable tableName="event"/>-->
+        <!--        </rollback>-->
+    </changeSet>
+
+
+</databaseChangeLog>
